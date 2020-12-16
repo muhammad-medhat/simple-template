@@ -13,6 +13,7 @@ body{
     background-image: url(../img/img02.jpg);
     background-size: cover;
     position: relative;
+    transition: .5s;
 }
 .landing-page .overlay{
     position: absolute;
