@@ -6,6 +6,17 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+/* settings box */
+.settings{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+}
+.settings .fa-gear{}
+.settings-content{}
+/* settings box */
 /* landing-page */
 
 .landing-page{
