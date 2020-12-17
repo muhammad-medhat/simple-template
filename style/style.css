@@ -10,12 +10,28 @@ body{
 .settings{
     position: fixed;
     top:0;
-    left: 0;
-    width: 20%;
-    height: 100%;
+    left: -300px;
+
+    width: 300px;
+    height: 100vh;
+    background: rgba(255,255,255,.4);
+    z-index: 999;
+    transition: .5s;
 }
-.settings .fa-gear{}
+.settings .toggle-settings{
+        position: absolute;
+        background: #fff;
+        right: -35px;
+        top: 50px;
+        cursor: pointer;
+        padding: .5em .25em .25em 1em;
+}
+.open{left: 0px;}
+.close{left: -300px;}
+
 .settings-content{}
+
+
 /* settings box */
 /* landing-page */
 
