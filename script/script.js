@@ -1,3 +1,12 @@
+/** 
+ * get the main color from local storage
+*/
+const mainColor = localStorage.getItem('color')
+document.documentElement.style.setProperty('--main-color', mainColor)
+
+/**
+ * settings box
+ */
 const settingGear = document.querySelector('.settings .fa-gear')
 const settingsDiv = document.querySelector('.settings')
 
@@ -18,7 +27,11 @@ function toggleOpen(){
         settingsDiv.classList.remove('close')
     }
 }
-//=======
+
+/**
+ * randomize background
+ */
+
 const landing = document.querySelector('.landing-page')
 const interval = 3000
 // const imgs =
@@ -30,3 +43,32 @@ setInterval(() => {
     console.log(r)
     landing.style.backgroundImage = `url(../img/img0${r}.jpg)`
 }, interval);
+/**
+ * settings colors
+ */
+const colorsList = document.querySelectorAll('.colors-list li')
+
+colorsList.forEach(li=>{
+    
+    li.style.backgroundColor= li.dataset.color
+    li.addEventListener('click', e=>{
+        document.documentElement.style.setProperty('--main-color', e.target.dataset.color)
+        localStorage.setItem('color', e.target.dataset.color)
+        //remove active from  seblings
+        e.target.parentElement.querySelectorAll('li').forEach(el=>{
+            el.classList.remove('active')
+        })
+        //add active class
+        e.target.classList.add('active')
+    })
+    //set active class on initialize
+    if(mainColor == li.dataset.color){
+        console.log(li)
+        li.classList.add('active')
+    }
+})
+//remove class from a container
+function removeCssClass(selector, className){
+    document.querySelectorAll(selector).classList.remove(className)
+    
+}
