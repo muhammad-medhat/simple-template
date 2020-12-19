@@ -67,9 +67,6 @@ body{
 
 
 
-.settings .option-box .option-button{
-    width: 100px;
-}
 .settings .option-box .buttons span{
     /* border: solid 1px; */
     border-radius: 5px;
@@ -78,23 +75,25 @@ body{
     margin: 10px;
 
     background: var(--buttons-color);
-    /* width: 100px; */
     color: #fff;
-    /* font-size: 12px; */
+    font-size: 12px;
     opacity: .5;
 }
+.option-button{
+    width: 100px;
+
+}
+
 .open{left: 0px;}
 .close{left: -300px;}
 
 .settings-content{}
-
 .settings .option-box .colors-list li:hover, 
-.settings .option-box .option-button:hover {
+.settings .option-box .yes:hover, 
+.settings .option-box .no:hover{
     opacity: 1;
 }
-.settings .option-box .buttons span.active{
-    opacity: 1;
-}
+.settings .option-box .buttons span .active,
 .settings .option-box .colors-list .active{
     opacity: 1;
     border:solid #b3acac;
