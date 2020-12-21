@@ -34,7 +34,7 @@ function toggleOpen(){
     }
 }
 
-/**
+/**********************************************************
  * randomize background
  */
 
@@ -47,10 +47,10 @@ function randomBackground( randomizeBgOption){
     if(randomizeBgOption){
         bgInt = setInterval(() => {
             const min=1
-            const max=4
+            const max=8
             const r = Math.floor(Math.random() * (max - min + 1)) + min;
             // console.log(r)
-            landing.style.backgroundImage = `url(../img/img0${r}.jpg)`
+            landing.style.backgroundImage = `url(../img/bg/img0${r}.jpg)`
         }, interval);
     } else{
         clearInterval(bgInt)

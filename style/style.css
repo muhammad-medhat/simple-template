@@ -3,6 +3,7 @@
     --main-hover: #7381e9;
     --selected-color: #17e228;
     --buttons-color: #427542;
+    --text-color: #6a756b;
 }
 *{
     box-sizing: border-box;
@@ -119,6 +120,12 @@ body{
     left: 0;
     z-index: 1;
 }
+.container{
+    width: 1170px;
+    padding: 15px;
+    margin: auto;
+    border: solid;
+}
 .header-area{
     position: relative;
     z-index: 2;
@@ -166,3 +173,28 @@ body{
     color:var(--main-color)
 }
 /* landing-page */
+/* about-us */
+.about{
+    display: flex;
+    /* align-items: center; */
+    align-content: center;
+}
+.about div{border:solid red}
+.about .info{
+    flex: 1;
+    /* padding: 50px; */
+}
+.about .info h2{
+    color: var(--main-color);
+}
+.about .info p{
+    color:var(--text-color)
+}
+.about .img{
+    flex: 1;
+    text-align: center;
+}
+.about .img img{ 
+    width:250px;
+}
+/* about-us */
