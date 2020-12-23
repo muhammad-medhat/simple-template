@@ -106,7 +106,7 @@ body{
 
 .landing-page{
     min-height: 100vh;
-    background-image: url(../img/img02.jpg);
+    background-image: url(../img/bg/img02.jpg);
     background-size: cover;
     position: relative;
     transition: .5s;
@@ -179,12 +179,14 @@ body{
     /* align-items: center; */
     align-content: center;
 }
-.about div{border:solid red}
+/* .about div{border:solid red} */
+
 .about .info{
     flex: 1;
     /* padding: 50px; */
 }
-.about .info h2{
+.about .info h2,
+.skills h2{
     color: var(--main-color);
 }
 .about .info p{
@@ -198,3 +200,40 @@ body{
     width:250px;
 }
 /* about-us */
+/* skills section */
+.skills{
+    background-color: rgb(155, 148, 148);
+}
+
+.skills .skill-box{
+    background: #eee;
+    padding: 20px;
+    margin: 10px ;
+    border: solid 1px;
+    border-radius: 5px;
+    display: flex;
+}
+.skills .skill-box .skill-name{
+    flex: 1;
+    font-weight: bold;
+    text-align:left;
+    /* background-color: #eef; */
+}
+
+.skills .skill-box .skill-progress{
+    flex: 11;
+    background-color: rgb(231, 223, 223);
+    height: 30px;
+    position: relative;
+}
+.skills .skill-box .skill-progress span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    height: 30px;
+    width:0px;
+    transition: all 1s;
+}
+/* skills section */
