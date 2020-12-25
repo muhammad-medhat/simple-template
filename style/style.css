@@ -65,9 +65,6 @@ body{
 
 }
 
-
-
-
 .settings .option-box .option-button{
     width: 100px;
 }
@@ -102,6 +99,54 @@ body{
 }
 
 /* settings box */
+/*********************************************************************************/
+/*nav bullets*/
+.nav-bullets{
+    position: fixed;
+    top: 20%;
+    right: 0;
+    z-index: 1000;
+
+    border-left: solid var(--main-color);
+    border-radius: 5px;
+    padding: 8px;
+}
+.nav-bullets .bullet{
+    display: flex;
+}
+
+.nav-bullets .bullet .blt{
+    opacity: .25;
+    border: solid 3px var(--main-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    align-self: center;
+    margin: 0 0 0 -20px;
+}
+
+
+.nav-bullets .bullet .tooltip{
+    margin: 10px;
+    padding: 5px 10px;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    text-transform: capitalize;
+    font-weight: bold;
+    color:#fff;
+    cursor: pointer;
+    opacity: .25;
+}
+
+.nav-bullets .bullet .tooltip.active{
+    opacity: 1;
+}
+.nav-bullets .bullet:hover,
+.nav-bullets .bullet .tooltip:hover,
+.nav-bullets .bullet  .blt:hover{
+    opacity: 1;
+}
+/**************************************************/
 /* landing-page */
 
 .landing-page{
@@ -124,7 +169,7 @@ body{
     width: 1170px;
     padding: 15px;
     margin: auto;
-    border: solid;
+    /* border: solid; */
 }
 .header-area{
     position: relative;

@@ -203,10 +203,45 @@ function createPopupBox(img, overlay){
     overlay.appendChild(popBox)
     return popBox
 }
+/* **********************************************
+ * nav-bullets 
+ */
+const sections = document.querySelectorAll('section')
+const nav = document.querySelector('.nav-bullets')
 
-/* ******************************************************************************* 
+// const lst = document.createElement('ul')
+sections.forEach(sec=>{
+    // console.log(sec)
+// generating nav list
+    const bullet = createElement('', 'div', 'bullet')
+    const tooltip = createElement(sec.className, 'div', 'tooltip')
+    const empty = createElement('', 'div', 'blt')
+    bullet.appendChild(empty)
+    bullet.appendChild(tooltip)
+    nav.appendChild(bullet)  
+    
+    // const li = document.createElement('li')
+    // li.innerText = sec.className
+    // lst.appendChild(li)
+
+    //adding the click event
+    tooltip.addEventListener('click', (e)=>{
+        //remove active from seblings
+        removeCssClass('.nav-bullets .bullet .tooltip', 'active')
+        e.target.classList.add('active')
+        sec.scrollIntoView( {behavior:'smooth'})
+    })
+})
+
+ /* ******************************************************************************* 
   * helper functions
   */
+ function createElement(txt, type='div', cls=''){
+    const element = document.createElement(type)
+    element.innerText = txt
+    element.className=cls
+    return element
+ }
 //style for selector
 function changeStyle(selector, style){
 
@@ -214,6 +249,11 @@ function changeStyle(selector, style){
 
 //remove class from a container
 function removeCssClass(selector, className){
+    /* 
+     * removes a css class from all elements in thht selector
+     
+     */
+
     document.querySelectorAll(selector).forEach(el=>{
         el.classList.remove(className)
     })
