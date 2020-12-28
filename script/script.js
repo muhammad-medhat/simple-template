@@ -1,217 +1,35 @@
-/** 
- * get the main color from local storage
-*/
-const mainColor = localStorage.getItem('color')
-document.documentElement.style.setProperty('--main-color', mainColor)
+
 /**
  * Helper functions
  */
-function boolParse(val){
-    return val.toLowerCase() == 'true' ? true : false
-}
-
-/**
- * settings box
- */
-const settingGear = document.querySelector('.settings .fa-gear')
-const settingsDiv = document.querySelector('.settings')
-
-//settingGear.addEventListener('click', toggleOpen )
-
-document.querySelector('.toggle-settings').addEventListener('click', ()=>{
-    settingGear.classList.toggle('fa-spin')
-    //settingsDiv.classList.toggle('open')
-    toggleOpen()
-})
-
-function toggleOpen(){
-    if(settingsDiv.classList.contains('open') ){
-        settingsDiv.classList.remove('open')
-        settingsDiv.classList.add('close')
-    } else{
-        settingsDiv.classList.add('open')
-        settingsDiv.classList.remove('close')
-    }
-}
 
 /**********************************************************
  * randomize background
  */
 
-const landing = document.querySelector('.landing-page')
-const interval = 1000
-// const imgs =
-//let randomizeBgOption = true
-let bgInt = null
-function randomBackground( randomizeBgOption){
-    if(randomizeBgOption){
-        bgInt = setInterval(() => {
-            const min=1
-            const max=8
-            const r = Math.floor(Math.random() * (max - min + 1)) + min;
-            // console.log(r)
-            landing.style.backgroundImage = `url(../img/bg/img0${r}.jpg)`
-        }, interval);
-    } else{
-        clearInterval(bgInt)
-    }
-}
-//call it on load
-
-document.querySelectorAll('.settings .option-box .buttons span').forEach(el => {
-    //console.log(el);
-    let randomStorage = localStorage.getItem('random')
-    let randomizeBgOption=''
-    //add the click event foreach button to update item in localstorage
-    el.addEventListener('click', evt=>{
-        // console.log(evt)
-        removeCssClass('.option-box .buttons span', 'active')
-        evt.target.classList.add('active')
-        // console.log('before', randomizeBgOption)
-        randomizeBgOption = boolParse( evt.target.dataset.random)
-        // console.log('after', randomizeBgOption)
-
-        randomBackground(randomizeBgOption)
-
-        localStorage.setItem('random', randomizeBgOption)
-    })
-    //add te active class on load
-    if(el.dataset.random == randomStorage){
-        el.classList.add('active')
-    }
-    //call image randomization on load
-    randomBackground(boolParse(randomizeBgOption))
-
-
-});
 
 
 /***************************************************************************************
  * settings colors
  */
-const colorsList = document.querySelectorAll('.colors-list li')
 
-colorsList.forEach(li=>{
-    
-    li.style.backgroundColor= li.dataset.color
-    li.addEventListener('click', e=>{
-        document.documentElement.style.setProperty('--main-color', e.target.dataset.color)
-        localStorage.setItem('color', e.target.dataset.color)
-        //remove active from  seblings
-        e.target.parentElement.querySelectorAll('li').forEach(el=>{
-            el.classList.remove('active')
-        })
-        //add active class
-        e.target.classList.add('active')
-        //change border color on click
-        document.querySelectorAll('.settings .option-box h4').forEach(el=>{
-            //el.style.border = 'solid'            
-            el.style.color = e.target.style.backgroundColor
-
-        })
-    })
-
-    //set active class on initialize
-    if(mainColor == li.dataset.color){
-        //console.log(li)
-        li.classList.add('active')
-        //change border color on load
-        document.querySelectorAll('.settings .option-box h4').forEach(el=>{
-            el.style.color = mainColor
-        })
-    }
-})
 /************************************************************************************************
  * skills functions
  */
 
-/**
- * first approach
- * in this approach the event is fired when the whole skills div is visible in the viewport
- */
-                // let target = document.querySelector('#skills')
-                // // options for the IntersectionObserver
-                // let options = {
-                //     rootMargin: '10px',
-                //     threshold: 0.5
-                // }
 
-                // let observer = new IntersectionObserver((entries) => {
-                //     entries.forEach(entry => {
-                //         console.log(entry.target)
-                //         const progSpan = entry.target.querySelector('.skill-progress span')
-                //         progSpan.style.width  = progSpan.dataset.progress
-                //     })
-                // }, options);
-                // target.querySelectorAll('.skill-box').forEach(el=>{
-                //     observer.observe(el)
-                // })
-/**
- * second approach
- * in this approach the event is fired when a single skill-box div is visible in the viewport
- */
-const target = document.querySelectorAll('.skill-box')
-const observer = new IntersectionObserver(entries =>{
-    //  console.log(entries)
-    entries.forEach(entry=>{
-        const progSpan = entry.target.querySelector('.skill-progress span')
-        progSpan.style.width  = progSpan.dataset.progress
-    })
-})
-// console.log(target)
-target.forEach(t=>{
-    // console.log(t)
-    observer.observe(t)
-   
-})
 /**************************************************************************************************
  * Gallery
  */
 
-const gallery = document.querySelectorAll('.gallery .img-box img')
-gallery.forEach( img => {
-    img.addEventListener('click', e=>{
-        // console.log(e.target)
-        //create an overlay
-        const overlay = document.createElement('div')
-        overlay.className = 'popup'
-        document.body.appendChild(overlay)
 
-        //creating the popup-box
-        popBox = createPopupBox(img, overlay)
-
-
-        //creating close button
-        const cls = document.createElement('span')
-        
-        cls.innerText = 'X'
-        cls.className = 'btn-close'
-        popBox.appendChild(cls)
-        document.querySelector('.btn-close').addEventListener('click', e=>{
-            document.querySelector('.popup').remove()
-        })
-
-
-    })
-})
-function createPopupBox(img, overlay){
-    const popBox = document.createElement('div')
-    popBox.className = 'img-box'
-    const image = document.createElement('img')
-    image.src   = img.src
-    popBox.appendChild(img)
-    overlay.appendChild(popBox)
-    return popBox
-}
 /* **********************************************
  * nav-bullets 
  */
-const sections = document.querySelectorAll('section')
-const nav = document.querySelector('.nav-bullets')
+const navSelector = '.nav-bullets'
+const nav = document.querySelector(navSelector)
 
-// const lst = document.createElement('ul')
 sections.forEach(sec=>{
-    // console.log(sec)
 // generating nav list
     const bullet = createElement('', 'div', 'bullet')
     const tooltip = createElement(sec.className, 'div', 'tooltip')
@@ -219,16 +37,45 @@ sections.forEach(sec=>{
     bullet.appendChild(empty)
     bullet.appendChild(tooltip)
     nav.appendChild(bullet)  
-    
-    // const li = document.createElement('li')
-    // li.innerText = sec.className
-    // lst.appendChild(li)
 
     //adding the click event
     tooltip.addEventListener('click', (e)=>{
         //remove active from seblings
-        removeCssClass('.nav-bullets .bullet .tooltip', 'active')
-        e.target.classList.add('active')
+        removeCssClass('.nav-bullets .bullet', 'active')
+        e.target.parentElement.classList.add('active')
+        sec.scrollIntoView( {behavior:'smooth'})
+    })
+})
+/**Nav-bullets option */
+const bulletsOptionSelector = '.settings #bullets-option .buttons span'
+const currentBulletsOption = localStorage.getItem('bullets')
+
+document.querySelectorAll(bulletsOptionSelector).forEach(el => {
+    el.addEventListener('click', evt=>{
+        // console.log(evt.target)
+        removeCssClass(bulletsOptionSelector, 'active')
+        evt.target.classList.add('active')
+        bulletsOption = boolParse( evt.target.dataset.bullets)
+        localStorage.setItem('bullets', bulletsOption)
+        showHideItem(navSelector, evt.target.dataset.bullets)
+    })
+    if(el.dataset.bullets == currentBulletsOption){
+        el.classList.add('active')
+    }
+    showHideItem(navSelector, currentBulletsOption)
+})
+
+
+/***************************************************************************************
+ * 
+ * creating a dynamic top navigation menu
+ */
+const navbar = document.querySelector('.navbar ul')
+sections.forEach(sec=>{
+    const li = document.createElement('li')
+    li.innerHTML = sec.className
+    navbar.appendChild(li)
+    li.addEventListener('click', e=>{
         sec.scrollIntoView( {behavior:'smooth'})
     })
 })
@@ -236,27 +83,8 @@ sections.forEach(sec=>{
  /* ******************************************************************************* 
   * helper functions
   */
- function createElement(txt, type='div', cls=''){
-    const element = document.createElement(type)
-    element.innerText = txt
-    element.className=cls
-    return element
- }
-//style for selector
-function changeStyle(selector, style){
-
-}
-
-//remove class from a container
-function removeCssClass(selector, className){
-    /* 
-     * removes a css class from all elements in thht selector
-     
-     */
-
-    document.querySelectorAll(selector).forEach(el=>{
-        el.classList.remove(className)
-    })
-    
-    
-}
+ 
+  document.querySelectorAll('.option-box#random-option span').forEach(el=>{
+      console.log(el)
+      el.target.style.width='100px'
+  })

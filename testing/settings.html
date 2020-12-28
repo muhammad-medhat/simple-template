@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    :root{
+    --main-color: #5a66bf;
+    --main-hover: #7381e9;
+    --selected-color: #17e228;
+    --buttons-color: #427542;
+    --text-color: #6a756b;
+}
+    .settings{
+        position: fixed;
+        top:0;
+        /*left: -300px;*/
+    
+        width: 300px;
+        height: 100vh;
+        background: rgba(70, 70, 70, 0.4);
+        z-index: 10;
+        transition: .5s;
+    }
+    .settings .settings-content{}
+
+    .settings .settings-content h2{
+        text-align: center;
+        background: #fff;
+        color: var(--main-color);
+        padding: 10px;
+        border: solid 1px;
+    }
+
+    .settings .settings-content .option-box{
+        border:solid 1px;
+        border-radius: 5px;
+        margin: 10px;    
+        text-align: center;
+        background-color: #c7c7c7;
+    }
+    .settings .settings-content .option-box h4{
+        margin: 1em;
+        font-weight: bold;
+        border-bottom: solid 1px;
+        color: var(--main-color);
+    }
+    .settings .settings-content .option-box h4::before{content:'{{ '}
+    .settings .settings-content .option-box h4::after{content:' }} '}
+
+    .settings .settings-content .option-box .buttons{}
+
+    .settings .settings-content .option-box .buttons .option-button{
+        
+        background: var(--main-color);
+        padding: 5px;
+        margin: 10px;
+        border: solid 1px;
+    }
+    
+    .settings .settings-content .option-box .colors-list{}
+    .settings .settings-content .option-box .colors-list li{}
+
+    
+    .settings .settings-content .option-box .btn-full{}
+    
+</style>
+</head>
+<body>
+    <div class="settings">
+        <div class="settings-content">
+            <h2>Settings</h2>
+            <div class="option-box">
+                <h4>Colors</h4>
+                <ul class="colors-list">
+                    <li data-color="#E91E63"></li>
+                    <li data-color="#e413b5"></li>
+                    <li data-color="#009688"></li>
+                    <li data-color="#03A9F4 "></li>
+                    <li data-color="#009688" "></li>
+                </ul>
+            </div>
+
+            <div id='random-option' class="option-box">
+                <h4>Random Image</h4>
+                <div class="buttons">
+                    <span class="option-button yes" data-random='true' >Yes</span>
+                    <span class="option-button no" data-random='false'>No</span>                
+                </div>
+            </div>
+
+            <div id='bullets-option' class="option-box">
+                <h4>Show Right Nav Bullets</h4>
+                <div class="buttons">
+                    <span class="option-button yes" data-bullets='true' >Yes</span>
+                    <span class="option-button no" data-bullets='false'>No</span>                
+                </div>
+            </div>
+
+            <div id='reset-option' class="option-box">
+                <span class="btn-full btn-danger">
+                    Reset Options
+                </span>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

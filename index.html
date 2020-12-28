@@ -14,7 +14,6 @@
 <body>
 
     <!-- start settings box -->
-
     <div class="settings">
         <div class="toggle-settings">
             <i class="fa fa-gear"></i>
@@ -32,13 +31,26 @@
                 </ul>
             </div>
 
-            <div class="option-box">
+            <div id='random-option' class="option-box">
                 <h4>Random Image</h4>
                 <div class="buttons">
                     <span class="option-button yes" data-random='true' >Yes</span>
                     <span class="option-button no" data-random='false'>No</span>                
                 </div>
+            </div>
 
+            <div id='bullets-option' class="option-box">
+                <h4>Show Right Nav Bullets</h4>
+                <div class="buttons">
+                    <span class="option-button yes" data-bullets='true' >Yes</span>
+                    <span class="option-button no" data-bullets='false'>No</span>                
+                </div>
+            </div>
+
+            <div id='reset-option' class="option-box">
+                <span class="btn-full btn-danger">
+                    Reset Options
+                </span>
             </div>
 
         </div>
@@ -58,14 +70,12 @@
         <div class="overlay"></div>
         <div class="container">
                 <div class="header-area">        
-                    <div class="logo">Logo</div>
-
-                    <ul class='links'>
-                        <li><a href="#" class='active'>Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Services</a></li>               
-                        <li><a href="#">About</a></li>
-                    </ul>
+                    <div class="logo"></div>
+                    <div class="navbar">
+                        <ul class='links'>
+                            
+                        </ul>
+                    </div>
                 </div>
         </div>
         <div class="intro-background">
@@ -171,8 +181,40 @@
                 <h3 class="year">2020</h3>
                 <div class="year-content">
                     <div class="left">
+                
+                    </div>
+
+                    <div class="sep"></div>
+
+                    <div class="right">
                         <div class="content">
-                            <h4>Left</h4>
+                            <h4>Lorem ipsum dolor sit.</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rem veniam soluta possimus alias doloremque quisquam! Error vel repudiandae quis fuga eos ullam deleniti aperiam. Ut officia unde maiores ipsum.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="year-content">
+                    <div class="left">
+                        <div class="content">
+                            <h4>Lorem, ipsum dolor.</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rem veniam soluta possimus alias doloremque quisquam! Error vel repudiandae quis fuga eos ullam deleniti aperiam. Ut officia unde maiores ipsum.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="sep"></div>
+
+                    <div class="right">
+
+                    </div>
+                </div>
+                <div class="year-content">
+                    <div class="left">
+                        <div class="content">
+                            <h4>Lorem, ipsum dolor.</h4>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rem veniam soluta possimus alias doloremque quisquam! Error vel repudiandae quis fuga eos ullam deleniti aperiam. Ut officia unde maiores ipsum.
                             </p>
@@ -183,20 +225,43 @@
 
                     <div class="right">
                         <div class="content">
-                            <h4>Right</h4>
+                            <h4>Lorem ipsum dolor sit.</h4>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rem veniam soluta possimus alias doloremque quisquam! Error vel repudiandae quis fuga eos ullam deleniti aperiam. Ut officia unde maiores ipsum.
                             </p>
                         </div>
                     </div>
-                </div>
-                
+                </div>  
+                <h3 class="year">2019</h3>
+                <div class="year-content">
+                    <div class="left">
 
+                    </div>
+
+                    <div class="sep"></div>
+
+                    <div class="right">
+                        <div class="content">
+                            <h4>Lorem ipsum dolor sit.</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum rem veniam soluta possimus alias doloremque quisquam! Error vel repudiandae quis fuga eos ullam deleniti aperiam. Ut officia unde maiores ipsum.
+                            </p>
+                        </div>
+                    </div>
+                </div>  
             </div>
         </div>
     </section>
     <!-- start timeline section -->
 
+    <script src="script/vars.js"></script>
+    <script src="script/helper.js"></script>
+    <script src="script/randomize.js"></script>
+    <script src="script/settings.js"></script>
+    <script src="script/skills.js"></script>    
+    <script src="script/gallery.js"></script>
+
     <script src="script/script.js"></script>
+    <script src="script/plus.js"></script>
 </body>
 </html>

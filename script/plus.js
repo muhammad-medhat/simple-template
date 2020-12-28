@@ -15,3 +15,16 @@ setInterval(() => {
 }, interval);
  * 
  */
+const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entrySection=>{
+        
+        /** add an active class */
+        removeCssClass('section', 'active')
+        entrySection.target.classList.add('active')
+    })
+    
+})
+
+sections.forEach(sec=>{
+    sectionObserver.observe(sec)
+})
