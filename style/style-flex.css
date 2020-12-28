@@ -402,9 +402,10 @@ section h2{
 .timeline .container .timeline-content .year-content{
     display: flex;
 }
-.timeline .container .timeline-content .year-content .sep{
+.timeline .container .timeline-content .year-content .sep, .sep{
     background-color: var(--main-color);
     width: 5px;
+    margin: 10px;
 }
 .timeline .container .timeline-content .left,
 .timeline .container .timeline-content .right{
@@ -452,6 +453,7 @@ margin: 20px;
     min-height: 667px;
     background-size: cover;
     position: relative;
+    z-index: 0;
 }
 .contact .overlay{
     background: rgb(238 238 255 / 35%);
@@ -465,47 +467,46 @@ margin: 20px;
 .contact .container{
     z-index: 2;
 }
+
 .contact .container form{
-    overflow: hidden;
+    display: flex;
     margin: auto;
-    width: 60%;
-    /* border:solid 1px; */
+    min-width: 40%;    
+    
+    justify-content: center;
+    border: solid;
 }
-.contact .container form .left,
-.contact .container form .right{
+.contact .container .right,
+.contact .container .left{
+    flex: 1;
     min-width: 48%;
-    margin: auto;
-    /* border: solid 1px; */
 }
-.contact .container form .left{
-    float: left;
+.contact .container .left{}
+.contact .container .right{}
+
+.contact .container form input{
+    height: 40px;
+    margin: 10px auto;
 }
-.contact .container form .right{
-    float: right;
+.contact .container form textarea{
+    height: 140px;
+}
+.contact .container form input[type='submit']{
+    background-color: var(--main-color);
+    color:#fff;
+    font-weight: bold;
 }
 .contact .container form input,
 .contact .container form textarea{
-    height: 40px;
-    width: 100%;
-}
-.contact .container form textarea{
-    height: 150px;
+    margin: 10px auto;
+    width: 95%;    
+    display: block;
 }
 .contact .container form input:not([type='submit']):focus,
 .contact .container form textarea:focus{
     outline: solid 1px var(--main-color);
 }
-.contact .container form input:not([type='submit']),
-.contact .container form textarea{
-    padding: 10px;
-    margin: 10px auto;    
-    display: block;    
-    border: 1px solid #CCC;
-}
-.contact .container form input[type='submit']{
-    background: var(--main-color);
-}
-/* not working */
+/* ????????????????? */
 .contact .container form input:focus::-ms-placeholder,
 .contact .container form input:focus::-webkit-input-placeholder,
 .contact .container form input:focus::-moz-input-placeholder{
@@ -513,8 +514,4 @@ margin: 20px;
     transition: .5s;
 }
 
-
-
-
-                    
 /*end contact us section*/

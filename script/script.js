@@ -83,8 +83,8 @@ sections.forEach(sec=>{
  /* ******************************************************************************* 
   * helper functions
   */
- 
-  document.querySelectorAll('.option-box#random-option span').forEach(el=>{
-      console.log(el)
-      el.target.style.width='100px'
-  })
+
+//   document.querySelectorAll('.option-box#random-option span').forEach(el=>{
+//       console.log(el)
+//       el.target.style.width='100px'
+//   })
