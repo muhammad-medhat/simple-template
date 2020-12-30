@@ -79,7 +79,24 @@ sections.forEach(sec=>{
         sec.scrollIntoView( {behavior:'smooth'})
     })
 })
+const toggleMenu = document.querySelector('.toggle-menu')
+const links = document.querySelector('.links')
 
+toggleMenu.addEventListener('click', (e) => {
+    e.stopPropagation()
+    e.target.classList.toggle('menu-active')
+    links.classList.toggle('open')
+    //toggleMenu.classList.toggle('menu-active')
+
+})
+document.addEventListener('click', (e)=>{
+    console.log(e.target)
+    if(!e.target.classList.contains('toggle-menu') && !e.target.classList.contains('links')){
+        e.stopPropagation()
+        links.classList.remove('open')
+        toggleMenu.classList.remove('menu-active')
+    }
+})
  /* ******************************************************************************* 
   * helper functions
   */

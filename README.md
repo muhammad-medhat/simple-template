@@ -12,3 +12,4 @@ A simple template for landing page, several features will be added
 __TODO__
 * Dynamic nv menu
 * Adding active class to the current visible section
+* Add scroll to top at end of each section
