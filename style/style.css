@@ -158,9 +158,38 @@ body{
     color:#fff;
     cursor: pointer;
 }
+@media(max-width:767px){
+    .nav-bullets .bullet {
+        /* display: grid; */
+        /* grid-template-rows: auto; */        
+        display: inline-flex;
+        opacity: .25;
+        top:0px;
+    }
+    .nav-bullets .bullet .blt {
+        /* border: solid 3px var(--main-color);
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        align-self: center; */
+        display: none;
+    }
+
+    .nav-bullets .bullet .tooltip {
+        /* margin: 10px;
+        padding: 5px 10px;
+        background-color: var(--main-color);
+        border-radius: 5px;
+        text-transform: capitalize;
+        font-weight: bold;
+        color: #fff;
+        width: 72px;
+        cursor: pointer; */
+    }
+}
 
 /* 
-.nav-bullets .bullet:hover,
+/* .nav-bullets .bullet:hover, */
 .nav-bullets .bullet .tooltip:hover,
 .nav-bullets .bullet  .blt:hover{
     opacity: 1;
@@ -172,7 +201,7 @@ body{
 }
 
 section, .landing-page{
-    min-height: 100vh;
+    min-height: 200vh;
 }
 /**********************  Start Landing Page  *********************************/
 .landing-page{
@@ -220,9 +249,9 @@ section, .landing-page{
     background:none;
     border: none;
     cursor: pointer;
-
     position: relative;
-    /* display: none; */
+
+    display: none;
 }
 
 .header-area .navbar .toggle-menu:focus, 
@@ -264,7 +293,7 @@ section, .landing-page{
     padding:10px;
     border-radius: 5px;
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -276,10 +305,17 @@ section, .landing-page{
 .intro-text h1 span{
     color:var(--main-color)
 }
-@media(max-width:991px){
-    .navbar .links{display:none}
-    /* .navbar .toggle-menu{display: inline-block;} */
-    .navbar .links.open{
+@media (max-width:991px){
+
+    .header-area.navbar .links{
+        display:none;
+    }
+    .header-area .navbar .toggle-menu{
+        display: inline-block;
+    }    
+
+}
+    /* .navbar .links.open{
         display: block;
         background-color: #fff;
         width: 35%;
@@ -302,7 +338,6 @@ section, .landing-page{
     .navbar .links.open li:hover{
         border:none;
         font-weight: bolder;
-        /* background: #ccc; */
     }
     .header-area .navbar .toggle-menu.menu-active::before{
         content: '';
@@ -312,8 +347,8 @@ section, .landing-page{
         bottom: -16px;
         border-color: #fff transparent transparent transparent;
         left: 29%
-    }
-}
+    } */
+
 /********************** End Landing Page  *********************************/
 /**/
 /**/
@@ -596,6 +631,27 @@ margin: 20px;
 .testimonials .container .ts-box .person-info h4{
 line-height: 0px;
 }
+    @media(max-width:991px){
+    /* .testimonials .container .ts-box{
+        width: 100%;
+        margin-bottom: 1%;
+    } */
+    .testimonials .container .ts-box .person-info{}
+    .testimonials .container .ts-box .person-info img{
+        float: none;
+    }
+    /* @media(max-width:691px){ */
+    @media(max-width:676px){
+        .testimonials .container .ts-box:not(:nth-of-type(3)){
+            width:49%;
+            margin-bottom: 1%;
+        }
+        .testimonials .container .ts-box:nth-of-type(3){
+            width:99%;
+        }
+    }
+
+}
 /********************** End Testimonial section *********************************/
 /**/
 /**/
@@ -667,6 +723,14 @@ line-height: 0px;
     opacity: 0;
     transition: .5s;
 }                   
+@media (max-width:767px){
+
+    .contact .container form .left,
+    .contact .container form .right{
+        float: none;
+    }
+    
+}
 /********************** End Contact us section ***********************************/
 
 /* Start Grid System */
