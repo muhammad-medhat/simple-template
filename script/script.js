@@ -1,4 +1,4 @@
-
+const defaultSettings = {'color': '#009688', 'random': true, 'bullets': true}
 /**
  * Helper functions
  */
@@ -105,3 +105,13 @@ document.addEventListener('click', (e)=>{
 //       console.log(el)
 //       el.target.style.width='100px'
 //   })
+/**
+ * Reset burron
+ */
+document.getElementById('btnRst').addEventListener('click', () => {
+    for(const el in defaultSettings) {
+        localStorage.setItem(el, defaultSettings[el])
+    }
+    showHideItem(navSelector, defaultSettings['bullets'])
+    randomBackground(boolParse(defaultSettings['random']))
+})

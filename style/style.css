@@ -53,6 +53,12 @@ body{
     border-bottom: solid 1px;
     color: var(--main-color);
 }
+.btn{
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--main-color);
+}
 .settings .option-box .buttons,
 .settings .option-box .colors-list{
     margin: 1em ;
@@ -88,7 +94,6 @@ body{
     padding: 5px;
     margin: 10px;
 
-    background: var(--main-color);
     /* width: 100px; */
     color: #fff;
     /* font-size: 12px; */
@@ -481,7 +486,6 @@ section h2{
     right: 0;
     border: solid 1px;
     border-radius: 50%;
-    cursor: pointer;
     background-color: var(--main-color);
     padding: 5px;
     margin: -15px -15px;
